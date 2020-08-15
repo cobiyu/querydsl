@@ -1,14 +1,12 @@
 package com.cobi.querydsl.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -36,6 +34,11 @@ public class Member {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
     @Builder.Default
     private List<Order> orderList = new ArrayList<>();
+
+    @Builder
+    public Member(Long id) {
+        this.id = id;
+    }
 
     public void setPhone(Phone phone) {
         phone.setMember(this);
