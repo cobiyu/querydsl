@@ -29,10 +29,15 @@ public class MemberRepository {
                 .mapToInt(value -> value.get(favorite.price))
                 .sum();
 
+        /// 연관관계 설정할 id만 배정된 member
+        Member member = Member.builder()
+                .id(memberId)
+                .build();
+
         return Order.builder()
                 .name("ordername")
                 .totalPrice(totalPrice)
-                .member(Member.builder().id(memberId).build())
+                .member(member)
                 .build();
     }
 
