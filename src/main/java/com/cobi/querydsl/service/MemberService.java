@@ -21,7 +21,7 @@ public class MemberService {
     public void init(){
         for (int i = 0; i < 5; i++) {
             Member member = Member.builder().email("testemail" + i).name("testname" + i).build();
-            Phone phone = Phone.builder().name("testphonename"+i).build();
+            Phone phone = Phone.builder().number("testphonename"+i).build();
 
             Favorite favorite = Favorite.builder()
                     .name("favoritename" + i).price(100*(i+1))
