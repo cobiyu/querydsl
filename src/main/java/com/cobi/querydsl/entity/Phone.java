@@ -15,8 +15,8 @@ public class Phone {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "number")
+    private String number;
 
     @Setter
     @OneToOne
